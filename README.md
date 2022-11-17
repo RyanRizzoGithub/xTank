@@ -5,19 +5,19 @@ This program implements a game called XTank, where players can move a tank and s
 
 The game can be played with 1-4 players
 
-There are 4 different maps......
+There are 4 different maps...
 - Cross: the barriers create a cross shape
 - Tunnel: the barriers create a hollow cross shape
 - Maze: the barriers create 4 T-junctions, one in each corner of the map 
 - Default: there are no barriers 
 
-There are four different armor amounts to choose from......
+There are four different armor amounts to choose from...
 - None
 - Low
 - Medium
 - High
 
-There three different types of weapons/ammo the user can choose from......
+There three different types of weapons/ammo the user can choose from...
 - Default: basic single bullet 
 - Shotgun: spread and 3 bullets come out 
 - Cannon: shoots a large bullet
