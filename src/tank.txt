@@ -1,0 +1,107 @@
+/* Author: Caitlin Wong */
+
+
+package components;
+
+public abstract class Tank {
+    private int health;
+    private int xCoord; 
+    private int yCoord;
+    private int armor;
+    private String color;
+    private int totalHealth;
+
+    public Tank(String color){ 
+        this.health = 500;
+        this.armor = 100;
+        this.xCoord = 0;
+        this.yCoord = 0;
+        this.color = color;
+        this.totalHealth = health + armor;
+    }
+    
+    
+    /* Returns tank's color */
+    public String getColor(){
+        return this.color;
+    }
+
+    /* Returns Tank's X Coordinate */
+    public int getXCoord(){ 
+        return this.xCoord;
+    }
+
+
+    /* Returns Tank's Y Coordinate */
+    public int getYCoord(){ 
+        return this.yCoord;
+    }
+
+
+    /* Sets tank's location  
+    public void setCoord(int newXCoord, int newYCoord){ 
+        xCoord = newXCoord; 
+        yCoord = newYCoord;
+    }
+    */
+    
+
+    /* Returns tank's health status  */
+    public int getHealth(){ 
+        return this.totalHealth;
+    }
+
+
+    /* Checks to see if the tank has armor */
+    public boolean hasArmor(){ 
+        if (armor == 0){ 
+            return true;
+        }
+        return false;
+    }
+
+
+    /* Changes tanks location 
+     * IMPLEMENT ME
+     */
+    public abstract void move();
+
+
+    /*Checks if the tank is dead */
+    public boolean isDead(Player player){ 
+        if (getHealth() == 0){ 
+            player.kills();
+            return true;
+        }
+        return false;
+    }
+
+
+    /* Checks if projectile has collided with tank */
+    public boolean isHit(Projectile item){
+        if ((xCoord == item.getXCoord()) && (yCoord == item.getYCoord())){ 
+            hit(item);
+            return true;
+        }
+        return false;
+    }
+
+    
+    /* Decreases tank's health by projectile damage amount */
+    public void hit(Projectile item){ 
+        if (armor != 0){ 
+            armor-= item.getDamage();
+        }else{ 
+            totalHealth -=item.getDamage();
+        }
+    }
+    
+
+    /* Tank info summary */
+    public String toString(){ 
+        String tankInfo = "Location: "+ String.valueOf(xCoord) + " , " + String.valueOf(yCoord) + "\n";
+        tankInfo += "Health Status: "+ String.valueOf(health);
+        return tankInfo;
+
+    }
+}
