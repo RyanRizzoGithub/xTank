@@ -1,5 +1,7 @@
 # XTank
 
+<img width="799" alt="Screen Shot 2022-12-24 at 4 16 01 PM" src="https://user-images.githubusercontent.com/89487878/209451206-70ffaf2b-9574-43f8-885c-910a2e0d8bb5.png">
+
 AUTHORS:
 - Ryan Rizzo
 - Caitlin Wong
